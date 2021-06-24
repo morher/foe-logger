@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+  "name": "FoE Logger",
+  "description": "Collecting FoE-information",
+  "version": "1.0",
+  "background": {
+    "page": "background.html"
+  },
+  "options_page": "popup.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.forgeofempires.com/*",
+        "https://foe.honu.city/*"
+      ],
+      "run_at": "document_start",
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "interceptor.js"
+  ],
+  "externally_connectable": {
+    "matches": [
+      "https://*.forgeofempires.com/*",
+      "https://foe.honu.city/*"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "https://foe.honu.city/*",
+    "http://localhost:8080/*"
+  ]
+}

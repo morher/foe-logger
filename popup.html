@@ -1,0 +1,81 @@
+<html>
+
+<body>
+	<style>
+		body {
+			margin: 0;
+			padding: .5rem;
+		}
+
+		h1 {
+			margin: -.5rem -.5rem .5rem -.5rem;
+			padding: .5rem;
+			background: #555;
+			color: #fff;
+			text-shadow: .1rem .1rem .2rem rgba(0, 0, 0, .5);
+		}
+
+		label {
+			display: block;
+			font-weight: bold;
+		}
+
+		input[type='checkbox']+label {
+			display: inline;
+			font-weight: normal;
+		}
+
+		input[type=text] {
+			padding: .2rem;
+		}
+
+		details {
+			border-left: .5rem solid #555;
+			padding: .5rem;
+		}
+	</style>
+
+	<h1>FoE Logger</h1>
+	<form name="settings">
+		<p>
+			<input type="checkbox" name="enableReporting" id="enableReporting"><label for="enableReporting">Enable
+				reporting</label>
+		</p>
+
+		<p>
+			<label for="token">Token: </label>
+			<input type="text" name="token" id="token" size="40" />
+		</p>
+
+		<p>
+			<label for="incmsg">Included messages: </label>
+			<input type="text" name="incmsg" id="incmsg" size="40" />
+		</p>
+
+		<p>
+			<label for="exmsg">Excluded messages: </label>
+			<input type="text" name="exmsg" id="exmsg" size="40" />
+		</p>
+
+		<details>
+			<summary>Advanced settings</summary>
+			<p>The game must be refreshed for these values to take effect.</p>
+
+			<p>
+				<label for="reportUrl">Report URL: </label>
+				<input type="text" name="reportUrl" id="reportUrl" size="35" />
+			</p>
+
+
+
+		</details>
+
+		<p>
+			<input type="submit" name="save" value="Save" />
+		</p>
+
+	</form>
+	<script src="popup.js"></script>
+</body>
+
+</html>
